@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Pair</title>
+</head>
+<body>
+<h1>File Uploaded Successfully</h1>
+
+
+<div th:if="${employeePair != null}">
+    <h2>Most Worked Together Pair</h2>
+    <p>
+        Employee 1 ID: <span th:text="${employeePair.employeeId1}"></span><br>
+        Employee 2 ID: <span th:text="${employeePair.employeeId2}"></span><br>
+        Total Days Worked Together: <span th:text="${employeePair.calculateTotalDaysWorkedTogether()}"></span>
+    </p>
+
+    <h2>Breakdown by Projects</h2>
+    <ul th:each="entry : ${employeePair.calculateDaysWorkedTogether()}">
+        <li>
+            Project ID: <span th:text="${entry.key}"></span>
+            Days Worked Together: <span th:text="${entry.value}"></span>
+        </li>
+    </ul>
+</div>
+
+<div th:unless="${employeePair != null}">
+    <p>No employee pairs found.</p>
+</div>
+
+
+<br/>
+<a th:href="@{/}">Return to homepage</a>
+
+</body>
+</html>
