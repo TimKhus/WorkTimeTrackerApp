@@ -2,7 +2,6 @@ package com.example.workTogetherTimeTracker.reader;
 
 import com.example.workTogetherTimeTracker.model.Employee;
 import com.example.workTogetherTimeTracker.model.EmployeeEntity;
-import com.example.workTogetherTimeTracker.model.ProjectDates;
 import com.example.workTogetherTimeTracker.repository.EmployeeEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

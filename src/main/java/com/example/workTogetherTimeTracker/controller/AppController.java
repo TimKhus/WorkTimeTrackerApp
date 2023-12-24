@@ -42,7 +42,7 @@
             Set<Employee> employeesFromDatabase = databaseReader.readEmployeesFromDatabase();
             // updating employees
             employeeService.getEmployees().addAll(employeesFromDatabase);
-            model.addAttribute("message", "Данные успешно считаны из базы данных");
+            model.addAttribute("message", "Data successfully read from database");
             return "homepage";
         }
 
@@ -50,10 +50,10 @@
         public String fileUpload(@RequestParam("file") MultipartFile file, Model model) {
 
             if (!file.isEmpty()) {
-                // Очистка данных перед загрузкой нового файла
+                // Clear data before uploading new file
                 employeeService.clearData();
 
-                // Загрузка данных из базы данных
+                // loading data from a database
                 Set<Employee> employeesFromDatabase = databaseReader.readEmployeesFromDatabase();
                 employeeService.getEmployees().addAll(employeesFromDatabase);
 
@@ -67,7 +67,7 @@
                     employeeEntityService.clearData();
 
 
-                    // Сохранение сотрудников в базу данных и обновление проектных дат
+                    // Saving employees to the database and updating project dates
                     for (Employee employee : employeeService.getEmployees()) {
                         employeeEntityService.saveEmployeeToDatabase(employee);
 
@@ -120,7 +120,7 @@
             Set<Employee> employees = new HashSet<>();
             // Обновляем множество сотрудников
             employees.addAll(employeesFromDatabase);
-            model.addAttribute("message", "Данные успешно считаны из базы данных");
+            model.addAttribute("message", "Data successfully read from database");
             return "homepage";
         }
     }

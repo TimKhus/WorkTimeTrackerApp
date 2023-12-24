@@ -10,10 +10,9 @@ import java.util.List;
 import java.util.Set;
 
 @Component
-public class CsvParser implements Parser {
+public class CsvParser {
     private Set<Employee> employees = new HashSet<>();
 
-    @Override
     public Set<Employee> parse(InputStream inputStream) {
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
