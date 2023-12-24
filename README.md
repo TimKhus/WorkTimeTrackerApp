@@ -14,7 +14,7 @@ The task involves processing input data from a CSV file containing information a
 
 2. **Data Structure**: Employee data is stored in memory, with each employee maintaining a map of project IDs to project date intervals.
 
-3. **Database Interaction (Bonus)**: The application interacts with a database to read and write employee data. It supports CRUD operations for employees and ensures data persistence.
+3. **Database Interaction: The application interacts with a database to read and write employee data. It supports CRUD operations for employees and ensures data persistence. Database file located in root folder, I used H2 to test.
 
 4. **Identifying Pairs**: The algorithm iterates through employees, identifying pairs who have worked together on common projects. It calculates the intersection of project dates to determine the duration of collaboration.
 
