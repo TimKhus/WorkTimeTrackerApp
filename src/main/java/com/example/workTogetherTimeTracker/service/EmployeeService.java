@@ -74,4 +74,9 @@ public class EmployeeService {
 
         return mostDaysWorkedPair;
     }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
 }
